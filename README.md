@@ -24,7 +24,6 @@ print "VmID\tName\tState\taccount\tdomian\tdomainid\tPassword"
 for vm in vms:
     print "%s\t%s\t%s\t%s\t%s\t%s" % (vm['id'], vm['name'], vm['account'], vm['domain'], vm['domainid'], vm['state'])
 
-print
 ```
 
 ucloud biz에서 사용 가능한 모든 상품의 목록 조회
@@ -47,10 +46,9 @@ for product in products['producttypes']:
         print "%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s"%(product['productid'],product['serviceofferingid'],product['serviceofferingdesc'],product['templateid'],product['templatedesc'],product['diskofferingid'],product['diskofferingdesc'],product['productstate'],product['zoneid'])
     else:
         print "%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s"%(product['productid'],product['serviceofferingid'],product['serviceofferingdesc'],product['templateid'],product['templatedesc'],product['diskofferingid'],product['diskofferingdesc'],product['productstate'],product['zoneid'])
+
 ```
 
-
-   
 Asynchronous tasks
 
 ```python

@@ -1,10 +1,17 @@
-CloudStack Python Client for ucloud biz
-==========================================
+# CloudStack Python Client for ucloud biz
 
 본 API는 CloudStack User API v3.0.0을 위한 Python 라이브러리이며, KT의 uclod biz 상품을 이용하기 위한 몇몇 기능이 추가된 버전으로, Jason Hancock <jsnbyh@gmail.com>의 Python Client를 기반으로 하고 있습니다.
 
-Examples
---------
+* 몇몇 기능들은 CloudStack User API와 호환되지 않습니다. (예, listAvailableProductTYpes는 cloud biz User API에만 있음)
+* 자세한 API에 대한 기능은 http://cloudincubation.olleh.com/index.html Cloud Incubation Center 홈페이지를 참고
+
+## Requirements
+
+## Usage
+
+$ git clone --recursive git://github.com/hongiiv/CloudStack_for_ucloudbiz.git
+
+## Examples
 
 ucloud biz에 생성된 모든 vm의 목록 조회
 

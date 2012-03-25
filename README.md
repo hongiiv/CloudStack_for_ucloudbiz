@@ -11,6 +11,8 @@ ucloud biz에 생성된 모든 vm의 목록 조회
 ```python
 #!/usr/bin/python
 
+import CloudStack
+
 api='https://api.ucloudbiz.olleh.com/server/v1/client/api'
 apikey='Your API KEY'
 secret='Your SECRET KEY'
@@ -28,7 +30,8 @@ for vm in vms:
 
 ucloud biz에서 사용 가능한 모든 상품의 목록 조회
 
-```#!/usr/bin/python
+```python
+#!/usr/bin/python
 
 import CloudStack
 

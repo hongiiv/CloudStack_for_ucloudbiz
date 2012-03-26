@@ -22,10 +22,7 @@ print "=========================================================================
 print "ProductID\tServiceOfferingID\tDesc\tTemplateID\tDesc\tDiskOfferingID\tDesc\tAvailable\tzoneid"
 print "============================================================================================================="
 for product in products['producttypes']:
-    if product['templatedesc'] == "Ubuntu 11.04 64bit":
-        print "%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s"%(product['productid'],product['serviceofferingid'],product['serviceofferingdesc'],product['templateid'],product['templatedesc'],product['diskofferingid'],product['diskofferingdesc'],product['productstate'],product['zoneid'])
-    else:
-        print "%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s"%(product['productid'],product['serviceofferingid'],product['serviceofferingdesc'],product['templateid'],product['templatedesc'],product['diskofferingid'],product['diskofferingdesc'],product['productstate'],product['zoneid'])
+    print "%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s"%(product['productid'],product['serviceofferingid'],product['serviceofferingdesc'],product['templateid'],product['templatedesc'],product['diskofferingid'],product['diskofferingdesc'],product['productstate'],product['zoneid'])
 
 print
 

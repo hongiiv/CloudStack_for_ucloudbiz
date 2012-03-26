@@ -31,7 +31,7 @@ logger -t "cloud" "STEP 2 fin"
 
 /usr/bin/python -c "import boto
 sns=boto.connect_sns(aws_access_key_id='AWS Access Key', aws_secret_access_key='AWS Secret Key')
-sns.publish('arn:aws:sns:us-east-1:263049782498:paws_cloudwatch','u r geninus','USER DATA FIN')
+sns.publish('arn:aws:sns:us-east-1:263049782498:paws_cloudwatch','Your are genius','USER DATA FIN')
 "
 
 logger -t "cloud" "STEP 3 fin"

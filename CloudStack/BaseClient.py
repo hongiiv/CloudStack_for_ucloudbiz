@@ -1,4 +1,5 @@
 import urllib2
+from urllib2 import Request, urlopen, URLError, HTTPError
 import urllib
 import json
 import hmac
@@ -37,34 +38,43 @@ class BaseClient(object):
         #hongiiv
         print self.api+'?'+query
 
-        response = urllib2.urlopen(self.api + '?' + query)
-        decoded = json.loads(response.read())
-       
-        if command == 'listAvailableProductTypes':
-            propertyResponse = command + 'response'
+        try:
+            response = urllib2.urlopen(self.api + '?' + query)
+        except HTTPError, e:
+            print 'Error>>> The server couldn\'t fulfill the request.'
+            print 'Error>>> Error code:', e.code
+            print 'Error>>>', e.read()
+        except URLError, e:
+            print 'We failed to reach a server.'
+            print 'Reason:', e.reason
         else:
-            propertyResponse = command.lower() + 'response'
-        print command
-
-        if not propertyResponse in decoded:
-            if 'errorresponse' in decoded:
-                raise RuntimeError("ERROR: " + decoded['errorresponse']['errortext'])
+            decoded = json.loads(response.read())
+       
+            if command == 'listAvailableProductTypes':
+                propertyResponse = command + 'response'
             else:
-                raise RuntimeError("ERROR: Unable to parse the response")
+                propertyResponse = command.lower() + 'response'
+            print command
 
-        response = decoded[propertyResponse]
-        result = re.compile(r"^list(\w+)s").match(command.lower())
+            if not propertyResponse in decoded:
+                if 'errorresponse' in decoded:
+                    raise RuntimeError("ERROR: " + decoded['errorresponse']['errortext'])
+                else:
+                    raise RuntimeError("ERROR: Unable to parse the response")
 
-        if not result is None:
-            type = result.group(1)
+            response = decoded[propertyResponse]
+            result = re.compile(r"^list(\w+)s").match(command.lower())
 
-            if type in response:
-                return response[type]
-            else:
-                # sometimes, the 's' is kept, as in :
-                # { "listasyncjobsresponse" : { "asyncjobs" : [ ... ] } }
-                type += 's'
+            if not result is None:
+                type = result.group(1)
+
                 if type in response:
                     return response[type]
+                else:
+                    # sometimes, the 's' is kept, as in :
+                    # { "listasyncjobsresponse" : { "asyncjobs" : [ ... ] } }
+                    type += 's'
+                    if type in response:
+                        return response[type]
 
-        return response
+            return response

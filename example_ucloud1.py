@@ -3,8 +3,8 @@
 import CloudStack
 
 api='https://api.ucloudbiz.olleh.com/server/v1/client/api'
-apikey='Your API KEY'
-secret='Your SECRET KEY'
+apikey='iW59r_QY7T07T-fXY7FH8IRsYbgJ6b-fV4pvCFsYkbx6ArMGFhaL4-sEz7zbpCNUA1I6ovcLIH2dTbXVp34mAA'
+secret='ttteX3ygXMJBHPinj3zVOuHg1WCq3tqX014elUPkMryMhiGP3OjcBijKPkMA7N9DGCZY5RvO9aLMuOh6SfY9dQ'
 
 cloudstack = CloudStack.Client(api, apikey, secret)
 

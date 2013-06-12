@@ -593,7 +593,7 @@ class Client(BaseClient):
 
         return self.request('deleteLoadBalancer', args)
 
-    def listLoadBalancer(self, args={}):
+    def listLoadBalancers(self, args={}):
         '''
         list ucloud load balancers
 
@@ -605,7 +605,7 @@ class Client(BaseClient):
             memid
         '''
 
-        return self.request('listLoadBalancer', args)
+        return self.request('listLoadBalancers', args)
 
     def updateLoadBalancer(self, args={}):
         '''
@@ -621,8 +621,51 @@ class Client(BaseClient):
 
         return self.request('updateLoadBalancer', args)
 
+    def addLoadbalancerWebServer(self, args={}):
+        '''
+        add a web server to ucloud load balancer
 
- 
+        args - A dictionary. The following are options for keys:
+            loadbalancerid -
+            virtualmachineid -
+            ipaddressid - public ip of web server
+            publicport -
+            weight -
+        '''
+
+        required_arguments = set(('loadbalancerid','virtualmachineid','ipaddressid','publicport'))
+        if not required_arguments.issubset(set(args.keys())):
+            raise RuntimeError("Missing required arguments '%s'" %
+                     ",".join(required_arguments.difference_update( set(args.keys()))) )
+
+        return self.request('addLoadbalancerWebServer', args)
+
+    def listLoadBalancerWebServers(self, args={}):
+        '''
+        list web servers registered to a ucloud load balancer
+
+        args - A dictionary. The following are options for keys:
+            loadbalancerid -
+        '''
+
+        if 'loadbalancerid' not in args:
+            raise RuntimeError("Missing required argument 'loadbalancerid'")
+
+        return self.request('listLoadBalancerWebServers', args)
+
+    def removeLoadbalancerWebServer(self, args={}):
+        '''
+        remove a web server registered to a ucloud load balancer
+
+        args - A dictionary. The following are options for keys:
+            serviceid - serviceid
+        '''
+
+        if 'serviceid' not in args:
+            raise RuntimeError("Missing required argument 'serviceid'")
+
+        return self.request('removeLoadbalancerWebServer', args)
+
     def createLoadBalancerRule(self, args={}):
         '''
         Creates a load balancer rule

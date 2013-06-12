@@ -559,6 +559,70 @@ class Client(BaseClient):
         return self.request('listNetscalerLoadBalancerNetworks', args)
  
 
+    def createLoadBalancer(self, args={}):
+        '''
+        Create a ucloud load balancer
+
+        args - A dictionary. The following are options for keys:
+            zoneid - zone id for server ip
+            name - load balancer name
+            loadbalanceroption - load balancing option  (roundrobin | leastconnection | leastresponse | srciphash | srciphashport)
+            serviceip -
+            serviceport -
+            servicetype - load balance service type (http | sslbridge | tcp | ftp)
+            healthchecktype - health check type (http | https | tcp)
+            healthcheckurl - if health check type is http/https, health check url is needed
+        '''
+        required_arguments = set(('zoneid','name','loadbalanceroption',
+                                'serviceport', 'servicetype','healthchecktype'))
+        if not required_arguments.issubset(set(args.keys())):
+            raise RuntimeError("Missing required arguments '%s'" %
+                     ",".join(required_arguments.difference_update( set(args.keys()))) )
+
+        return self.request('createLoadBalancer', args)
+
+    def deleteLoadBalancer(self, args={}):
+        '''
+        Delete a ucloud load balancer
+
+        args - A dictionary. The following are options for keys:
+            loadbalancerid - load balancer id
+        '''
+        if not 'loadbalancerid' in args:
+            raise RuntimeError("Missing required argument 'loadbalancerid'")
+
+        return self.request('deleteLoadBalancer', args)
+
+    def listLoadBalancer(self, args={}):
+        '''
+        list ucloud load balancers
+
+        args - A dictionary. The following are options for keys:
+            zoneid - zone id of loadbalancer
+            loadbalancerid -
+            name -
+            serviceip -
+            memid
+        '''
+
+        return self.request('listLoadBalancer', args)
+
+    def updateLoadBalancer(self, args={}):
+        '''
+        update a ucloud load balancer
+
+        args - A dictionary. The following are options for keys:
+            loadbalancerid -
+            loadbalanceroption -  (roundrobin | leastconnection | leastresponse | srciphash | srciphashport)
+            servicetype - (http | sslbridge | tcp | ftp)
+            healthchecktype - (http | https | tcp)
+            healthcheckurl - 
+        '''
+
+        return self.request('updateLoadBalancer', args)
+
+
+ 
     def createLoadBalancerRule(self, args={}):
         '''
         Creates a load balancer rule

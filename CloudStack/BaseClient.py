@@ -36,7 +36,7 @@ class BaseClient(object):
         query += '&signature=' + urllib.quote_plus(signature)
 
         #hongiiv
-        ###print self.api+'?'+query
+        print self.api+'?'+query
 
         try:
             response = urllib2.urlopen(self.api + '?' + query)

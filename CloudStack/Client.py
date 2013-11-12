@@ -5160,4 +5160,64 @@ class Client(BaseClient):
 
         return self.request('listAlerts', args)
  
+    def createPackage(self, args={}):
+       if not 'PackageName' in args:
+           raise RuntimeError("Missing required argument 'PackageName'")
+       return self.request('createPackage', args)
 
+    def describePackageResources(self, args={}):
+       return self.request('describePackageResources', args)
+
+    def getVMPassword(self, args={}):
+       return self.request('getVMPassword', args)
+
+    def registerUserSignal(self, args={}):
+       if not 'PackageName' in args:
+           raise RuntimeError("Missing required argument 'PackageName'")
+       return self.request('registerUserSignal', args)
+
+    def deletePackage(self, args={}):
+       if not 'PackageName' in args:
+           raise RuntimeError("Missing required argument 'PackageName'")
+       return self.request('deletePackage', args)
+
+    def describePackages(self, args={}):
+       if not 'PackageName' in args:
+           raise RuntimeError("Missing required argument 'PackageName'")
+       return self.request('describePackages', args)
+
+    def listPackageResources(self, args={}):
+       if not 'PackageName' in args:
+           raise RuntimeError("Missing required argument 'PackageName'")
+       return self.request('listPackageResources', args)
+
+    def listPackages(self, args={}):
+       return self.request('listPackages', args)
+ 
+    def deletePackage(self, args={}):
+       if not 'PackageName' in args:
+          raise RuntimeError("Missing required argument 'PackageName'")
+       return self.request('deletePackage', args)
+
+    def getTemplate(self, args={}):
+       if not 'PackageName' in args:
+          raise RuntimeError("Missing required argument 'PackageName'")
+       return self.request('getTemplate', args)
+
+    def describePackageEvents(self, args={}):
+       return self.request('describePackageEvents', args)
+
+    def deleteTemplate(self, args={}):
+       return self.request('deleteTemplate', args)
+
+    def uploadTemplate(self, args={}):
+       return self.request('uploadTemplate', args)
+
+    def describeTemplate(self, args={}):
+       return self.request('describeTemplate', args)
+
+    def validateTemplate(self, args={}):
+       return self.request('validateTemplate', args)
+
+    def listTemplates(self, args={}):
+       return self.request('listTemplates', args)

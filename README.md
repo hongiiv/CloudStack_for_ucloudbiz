@@ -61,6 +61,26 @@ for product in products['producttypes']:
 
 ```
 
+ucloud biz 에서 사용중인 모든 로드밸런서에 등록된 모든 웹써버 리스트 조회
+```python
+#!/usr/bin/python
+
+import CloudStack
+
+# 로드밸런서는 api url 이 다릅니다.!!! 
+api='https://api.ucloudbiz.olleh.com/loadbalancer/v1/client/api'
+apikey='Your API KEY'
+secret='Your SECRET KEY'
+cloudstack = CloudStack.Client(api, apikey, secret)
+lbs =  cloudstack.listLoadBalancers()
+for lb in lbs:
+    lbid = lb["loadbalancerid"]
+    wbs = cloudstack.listLoadBalancerWebServers({"loadbalancerid":str(lbid)})
+    for wb in wbs:
+        print wb
+
+```
+
 Asynchronous tasks
 
 ```python

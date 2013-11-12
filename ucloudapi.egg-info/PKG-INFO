@@ -1,0 +1,10 @@
+Metadata-Version: 1.0
+Name: ucloudapi
+Version: 0.1
+Summary: olleh ucloud biz API Client
+Home-page: https://github.com/hongiiv/CloudStack_for_ucloudbiz
+Author: ChangBum Hong
+Author-email: hongiiv@gmail.com
+License: MIT
+Description: Python interface ucloud biz API
+Platform: Posix; MacOS X; Windows

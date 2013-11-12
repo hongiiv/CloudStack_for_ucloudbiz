@@ -1,6 +1,6 @@
 #!/usr/bin/python
 
-# Copyright (c) 2011 Jason Hancock <jsnbyh@gmail.com>
+# Copyright (c) 2013 ChangBum Hong <hongiiv@gmail.com>
 #
 # Permission is hereby granted, free of charge, to any person obtaining a
 # copy of this software and associated documentation files (the
@@ -27,14 +27,14 @@ except ImportError:
     from distutils.core import setup
 
 setup(
-    name             = 'CloudStack',
+    name             = 'ucloudapi',
     version          = '0.1',
-    description      = "CloudStack API v2.2 Client",
-    long_description = "Python interface CloudStack v2.2 API",
-    author           = "Jason Hancock",
-    author_email     = "jsnbyh@gmail.com",
-    url              = "https://github.com/jasonhancock/cloudstack-python-client",
-    packages         = [ 'CloudStack' ],
+    description      = "olleh ucloud biz API Client",
+    long_description = "Python interface ucloud biz API",
+    author           = "ChangBum Hong",
+    author_email     = "hongiiv@gmail.com",
+    url              = "https://github.com/hongiiv/CloudStack_for_ucloudbiz",
+    packages         = [ 'ucloudapi' ],
     license          = 'MIT',
     platforms        = 'Posix; MacOS X; Windows',
 )

@@ -1,0 +1,9 @@
+setup.py
+ucloudapi/BaseClient.py
+ucloudapi/Client.py
+ucloudapi/ExtendedClient.py
+ucloudapi/__init__.py
+ucloudapi.egg-info/PKG-INFO
+ucloudapi.egg-info/SOURCES.txt
+ucloudapi.egg-info/dependency_links.txt
+ucloudapi.egg-info/top_level.txt

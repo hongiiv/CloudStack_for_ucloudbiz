@@ -1,12 +1,12 @@
 #!/usr/bin/python
 
-import CloudStack
+import ucloudapi
 
 api='https://api.ucloudbiz.olleh.com/server/v1/client/api'
 apikey='API KEY'
 secret='SECRET KEY'
 
-cloudstack = CloudStack.Client(api, apikey, secret)
+cloudstack = ucloudapi.Client(api, apikey, secret)
 
 import base64
 #userdata=base64.b64encode("#!/bin/bash\necho \"127.0.0.1 $(hostname)\" >> /etc/hosts\ntouch /root/file-from-userdata")

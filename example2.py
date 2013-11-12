@@ -1,6 +1,6 @@
 #!/usr/bin/python
 
-import CloudStack
+import ucloudapi
 
 api = 'http://example.com:8080/client/api'
 apikey = 'API KEY'

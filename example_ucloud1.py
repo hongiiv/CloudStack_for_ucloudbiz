@@ -1,12 +1,12 @@
 #!/usr/bin/python
 
-import CloudStack
+import ucloudapi
 
 api='https://api.ucloudbiz.olleh.com/server/v1/client/api'
 apikey='APIKEY'
 secret='SECRETKEY'
 
-cloudstack = CloudStack.Client(api, apikey, secret)
+cloudstack = ucloudapi.Client(api, apikey, secret)
 
 vms = cloudstack.listVirtualMachines()
 

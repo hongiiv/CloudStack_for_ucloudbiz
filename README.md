@@ -6,8 +6,8 @@
 * 자세한 API에 대한 기능은 http://cloudincubation.olleh.com/index.html Cloud Incubation Center 홈페이지를 참고
 
 ##업데이트 사항
-*ucloud server api 지원
-*ucloud packaging api 지원 
+* ucloud server api 지원
+* ucloud packaging api 지원 
 
 ## Usage
 

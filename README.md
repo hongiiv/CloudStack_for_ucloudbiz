@@ -7,7 +7,8 @@
 
 ##업데이트 사항
 * ucloud server api 지원
-* ucloud packaging api 지원 
+* ucloud packaging api지원 
+*  ucloud loadblancer api 지원 
 
 ## Usage
 
